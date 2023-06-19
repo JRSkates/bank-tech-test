@@ -87,16 +87,17 @@ Ran all test suites.
 
 ### My Approach
 
-- I started with a simple planning session, picking apart the syntax within the breif to identify where each element might fit
+- I started with a simple planning session, picking apart the syntax within the breif to identify where each element might fit.
+- My initial diagram can be found in the main directory: initial-diagram.png - along with the Excalidraw file I created using the VSCode Excalidraw Extension.
 - I settled on two classes: Transaction and Account. 
-- The first of these deals with the actual inputs, so whether that be a Deposit or Withdrawal it will still need an amount and a date
+- The first of these deals with the actual inputs, so whether that be a Deposit or Withdrawal it will still need an amount and a date.
 - Account allows you to deposit and withdraw these Transaction objects. It handles that logic and stores them so all of these transactions can be called back with the printStatment() method - formatted to match the brief.
-- The applicaiton is run from a third file: main.js. Within there we have a simple function which welcomes the user and allows them to interact with the application in a REPL
-- All these classes were test driven and I have managed to get 100% coverage - I didn play around with some test for main.js however there were no meaningful tests I could get working without causing issues around the test suite not exiting
+- The applicaiton is run from a third file: main.js. Within there we have a simple function which welcomes the user and allows them to interact with the application in a REPL.
+- All these classes were test driven and I have managed to get 100% coverage - I did play around with some test for main.js however there were no meaningful tests I could get working without causing issues around the test suite not exiting.
 
 ### Code elements of note
 
-- I added two empty constructors within each Transaction object: type and currentBalance. This means when they are passed into the Account object we can conditionally update these elements to help us: identity what type of transaction it is, Deposit or Withdrawal, and to keep a running total of the overall balance at the time of that particular transaction
-- For the date element of the transaction I created a function called formatDate which takes a new Date object and formats it properly. This means users do not need to worry about manually entering the date, it will simply use the inbuilt JS Date object to that that info
+- I added two empty constructors within each Transaction object: type and currentBalance. This means when they are passed into the Account object we can conditionally update these elements to help us: identity what type of transaction it is, Deposit or Withdrawal, and to keep a running total of the overall balance at the time of that particular transaction.
+- For the date element of the transaction I created a function called formatDate which takes a new Date object and formats it properly. This means users do not need to worry about manually entering the date, it will simply use the inbuilt JS Date object to extract today's date and format it correctly.
 - I added a conditonal to withdraw on the Account class that does not let the user withdraw more money then they have in their account.
-- The printStatement method formats each transaction saved within the transactions array, using the transaction.type as a conditional - as the formatting is different for a Deposit and a Withdrawl. They are all concatenated with a line break and console.logged
+- The printStatement method formats each transaction saved within the transactions array, using the transaction.type as a conditional - as the formatting is different for a Deposit and a Withdrawl. They are all concatenated with a line break and console.logged.
