@@ -17,6 +17,22 @@ date       || credit || debit  || balance
 10/01/2023 || 1000.00||       || 1000.00
 ```
 
+### How to Use
+
+- Fork the codebase
+- Run:
+```
+npm install
+
+```
+
+- then naviagate to the src folder and run main.js
+```
+cd ./bank-tech-test/src
+node main.js
+
+```
+
 ### Example Usage
 
 ```
@@ -33,9 +49,9 @@ undefined
 undefined
 > account.printStatement()
 'date || credit || debit || balance\n' +
-  '19-06-2023 || || 800 || 400\n' +
-  '19-06-2023 || 400 || || 1200\n' +
-  '19-06-2023 || || 200 || 800\n' +
-  '19-06-2023 || 1000 || || 1000\n'
+  '19-06-2023 || || 800.00 || 400.00\n' +
+  '19-06-2023 || 400.00 || || 1200.00\n' +
+  '19-06-2023 || || 200.00 || 800.00\n' +
+  '19-06-2023 || 1000.00 || || 1000.00\n'
 >
 ```

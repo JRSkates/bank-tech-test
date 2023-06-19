@@ -31,12 +31,12 @@ class Account {
 
     for (let i = this.transactions.length - 1; i >= 0; i--) {
       let transaction = this.transactions[i];
-
+      let currentBalanceFloat = (transaction.currentBalance).toFixed(2)
       //console.log(transaction)
       if (transaction.type === 'Deposit') {
-        statement += `${transaction.date} || ${transaction.amount} || || ${transaction.currentBalance}\n`
+        statement += `${transaction.date} || ${transaction.amount} || || ${currentBalanceFloat}\n`
       } else {
-        statement += `${transaction.date} || || ${transaction.amount} || ${transaction.currentBalance}\n`
+        statement += `${transaction.date} || || ${transaction.amount} || ${currentBalanceFloat}\n`
       }
     }
     //console.log(statement)
