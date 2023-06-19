@@ -48,10 +48,39 @@ undefined
 > account.withdraw(800)
 undefined
 > account.printStatement()
-'date || credit || debit || balance\n' +
-  '19-06-2023 || || 800.00 || 400.00\n' +
-  '19-06-2023 || 400.00 || || 1200.00\n' +
-  '19-06-2023 || || 200.00 || 800.00\n' +
-  '19-06-2023 || 1000.00 || || 1000.00\n'
+date || credit || debit || balance
+19-06-2023 || || 800.00 || 400.00
+19-06-2023 || 400.00 || || 1200.00
+19-06-2023 || || 200.00 || 800.00
+19-06-2023 || 1000.00 || || 1000.00
 >
+```
+
+### Test Coverage
+```
+➜  bank-tech-test git:(main) ✗ jest --coverage
+ PASS  test/account.test.js
+  ● Console
+
+    console.log
+      date || credit || debit || balance
+      19-06-2023 || || 500.00 || 1000.00
+      19-06-2023 || 1500.00 || || 1500.00
+
+      at console.<anonymous> (node_modules/jest-mock/build/index.js:709:23)
+
+ PASS  test/transaction.test.js
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |     100 |      100 |     100 |     100 |                   
+ account.js     |     100 |      100 |     100 |     100 |                   
+ transaction.js |     100 |      100 |     100 |     100 |                   
+----------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 2 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.218 s, estimated 1 s
+Ran all test suites.
 ```

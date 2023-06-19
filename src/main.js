@@ -2,7 +2,9 @@ const Account = require('./account');
 
 const account = new Account();
 
-console.log('Welcome to the banking app!');
+const startApp = () => {
+  console.log('Welcome to the banking app!');
+  require('repl').start('> ').context.account = account;
+}
 
-// Start the Node REPL
-require('repl').start('> ').context.account = account;
+startApp();

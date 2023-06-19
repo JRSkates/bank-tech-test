@@ -33,8 +33,13 @@ describe ('Account', () => {
     const acc = new Account;
     acc.deposit(1500);
     acc.withdraw(500);
-    //console.log(acc.printStatement());
+
+    const consoleSpy = jest.spyOn(console, 'log');
+    acc.printStatement()
+
     let result = "date || credit || debit || balance\n19-06-2023 || || 500.00 || 1000.00\n19-06-2023 || 1500.00 || || 1500.00\n"
-    expect(acc.printStatement()).toEqual(result);
+    expect(consoleSpy).toHaveBeenCalledWith(result)
+    
+    consoleSpy.mockRestore();
   })
 });
