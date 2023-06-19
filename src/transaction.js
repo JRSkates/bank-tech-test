@@ -2,6 +2,8 @@ class Transaction {
   constructor(amount) {
     this.amount = amount;
     this.date = this.formatDate(new Date());
+    this.type = ''
+    this.currentBalance = 0
   }
 
   formatDate(date) {
