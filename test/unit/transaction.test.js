@@ -1,4 +1,4 @@
-const Transaction = require('../src/transaction')
+const Transaction = require('../../src/transaction')
 
 describe ('Transaction', () => {
   it('should construct with an amount and a date', () => {
